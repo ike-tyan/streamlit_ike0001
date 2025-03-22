@@ -67,7 +67,9 @@ left_column.button('ボタン左')
 right_column.button('ボタン右')
 
 # URLから画像表示
-image_url = "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Erika_Ikuta_2022_House_of_Councillors_Election_Enlightment_Poster.jpg"
+image_url = "https://img-mdpr.freetls.fastly.net/article/QG5E/nm/QG5EQe66oA94O3fJO4l91LKGHggtdAkIivvxSDXuHOg.jpg"
+st.image(image_url, caption="生田絵里香", use_column_width=True)
+
 
 #イメージ画像
 Image = Image.open('001_streamlit/k02.jpg')
