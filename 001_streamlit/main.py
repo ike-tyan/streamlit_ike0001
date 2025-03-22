@@ -67,16 +67,16 @@ left_column.button('ボタン左')
 right_column.button('ボタン右')
 
 #イメージ画像
-Image = Image.open(r"C:\Users\ikega\Videos\RealPlayer Downloads\00Streamliへの道\pages\k02.jpg")
+Image = Image.open(r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit\k02.jpg")
 st.image(Image, caption='笑顔(^^♪')
 
 #音楽
-audio_file = open(r"C:\Users\ikega\Videos\RealPlayer Downloads\00Streamliへの道\pages\voice_193948.m4a", 'rb')
+audio_file = open(r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit\voice_193948.m4a", 'rb')
 audio_bytes = audio_file.read()
 st.audio(audio_bytes, format='audio/m4a')
 
 #動画
-video_file = open(r"C:\Users\ikega\Videos\RealPlayer Downloads\00Streamliへの道\pages\googleVeo2.mp4", 'rb')
+video_file = open(r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit\googleVeo2.mp4", 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
