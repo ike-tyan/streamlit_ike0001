@@ -66,17 +66,20 @@ left_column, right_column = st.columns(2)
 left_column.button('ボタン左')
 right_column.button('ボタン右')
 
+# URLから画像表示
+image_url = "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Erika_Ikuta_2022_House_of_Councillors_Election_Enlightment_Poster.jpg"
+
 #イメージ画像
-Image = Image.open("k02.jpg")
+Image = Image.open('001_streamlit/k02.jpg')
 st.image(Image, caption='笑顔(^^♪')
 
 #音楽
-audio_file = open("voice_193948.m4a", 'rb')
+audio_file = open('001_streamlit/voice_193948.m4a', 'rb')
 audio_bytes = audio_file.read()
 st.audio(audio_bytes, format='audio/m4a')
 
 #動画
-video_file = open("googleVeo2.mp4", 'rb')
+video_file = open('001_streamlit/googleVeo2.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
