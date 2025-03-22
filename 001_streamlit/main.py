@@ -67,7 +67,7 @@ left_column.button('ボタン左')
 right_column.button('ボタン右')
 
 #イメージ画像
-Image = Image.open(r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit\k02.jpg")
+Image = Image.open( .k02.jpg)
 st.image(Image, caption='笑顔(^^♪')
 
 #音楽
