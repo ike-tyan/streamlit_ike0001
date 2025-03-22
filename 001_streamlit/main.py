@@ -68,7 +68,8 @@ right_column.button('ボタン右')
 
 # URLから画像表示
 image_url = "https://img-mdpr.freetls.fastly.net/article/QG5E/nm/QG5EQe66oA94O3fJO4l91LKGHggtdAkIivvxSDXuHOg.jpg"
-st.image(image_url, caption="生田絵里香", use_column_width=True)
+st.image(image_url, caption="生田絵里香", use_container_width=True)
+
 
 
 #イメージ画像
