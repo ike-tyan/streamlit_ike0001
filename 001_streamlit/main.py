@@ -10,8 +10,8 @@ left1_column, right1_column = st.columns(2)
 with left1_column:
     #左側
     #イメージ画像
-    photo = Image.open('./レシート_001.jpg')
-    #photo = Image.open('001_streamlit/レシート_001.jpg')
+    #photo = Image.open('./レシート_001.jpg')
+    photo = Image.open('001_streamlit/レシート_001.jpg')
     st.image(photo, caption='レシート類')
 
 with right1_column:
@@ -78,7 +78,8 @@ right_column.button('ボタン右')
 
 
 
-df = pd.read_csv('./data001.csv')
+#df = pd.read_csv('./data001.csv')
+df = pd.read_csv('001_streamlit/data001.csv')
 
 #平均
 mean1 = df.groupby('科目').mean(numeric_only=True)
