@@ -1,10 +1,19 @@
 import streamlit as st
+from PIL import Image
 
-#ボタンを横に並べる
+
+#画面を左右に分解
 left1_column, right1_column = st.columns(2)
-left1_column.button('ボタン左1')
-#right1_column.button('ボタン右1')
 
+#左側
+#イメージ画像
+Image = Image.open('レシート_001.jpg')
+left1_column.image(Image, caption='レシート類')
+
+#右側
+#タイトル
+right1_column.title("仕訳確認S")
+right1_column.write("AI-OCRの結果を現物を見て確認&訂正")
 
 #テキストボックス(単純)
 kamoku = right1_column.text_input('科目','消耗品費')
