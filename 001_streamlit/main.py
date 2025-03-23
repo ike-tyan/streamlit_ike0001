@@ -7,8 +7,8 @@ left1_column, right1_column = st.columns(2)
 
 #左側
 #イメージ画像
-Image = Image.open('レシート_001.jpg')
-left1_column.image(Image, caption='レシート類')
+photo = Image.open('レシート_001.jpg')
+left1_column.image(photo, caption='レシート類')
 
 #右側
 #タイトル
@@ -34,7 +34,7 @@ def update_textbox():
     except ValueError:
         st.session_state.formatted_value = st.session_state.input_box  # 無効な値の場合そのまま維持
 
-st.text_input(
+right1_column.text_input(
     "金額",
     value=st.session_state.formatted_value,
     key="input_box",
@@ -45,7 +45,7 @@ st.text_input(
 #テキストボックス(単純)
 t_banngou = right1_column.text_input('登録番号','T1234567890123')
 tekiyou1 = right1_column.text_input('摘要1','セブンイレブン静岡森下町店')
-tekiyou1 = right1_column.text_input('摘要1','来客用缶コーヒー')
+tekiyou1 = right1_column.text_input('摘要2','来客用缶コーヒー')
 
 
 
