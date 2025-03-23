@@ -7,7 +7,7 @@ left1_column, right1_column = st.columns(2)
 
 #左側
 #イメージ画像
-photo = Image.open('レシート_001.jpg')
+photo = Image.open('001_streamlit/レシート_001.jpg')
 left1_column.image(photo, caption='レシート類')
 
 #右側
