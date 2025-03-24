@@ -21,7 +21,7 @@ with left1_column:
     
     # 変数Localの値を選択
     # 1＜ローカル＞または2＜クラウド＞を選べるようにする
-    Local = 1
+    Local = 2
     
     # Localの値によって異なるパスを指定
     if Local == 1:
