@@ -13,11 +13,23 @@ left1_column, right1_column = st.columns(2)
 with left1_column:
     #左側
     #イメージ画像
+    #photo1 = Image.open(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\レシート_001.jpg')
     #ローカルOK
     #photo = Image.open('レシート_001.jpg')
     #ローカルOK、クラウドno
     #photo = Image.open('./レシート_001.jpg')
-    photo = Image.open('001_streamlit/レシート_001.jpg')
+    
+    # 変数Localの値を選択
+    # 1＜ローカル＞または2＜クラウド＞を選べるようにする
+    Local = 1
+    
+    # Localの値によって異なるパスを指定
+    if Local == 1:
+        photo = Image.open(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\レシート_001.jpg')
+    elif Local == 2:
+        photo = './レシート_001.jpg'
+    
+    #画像の表示
     st.image(photo, caption='レシート類')
 
 with right1_column:
@@ -81,12 +93,17 @@ right_column.button('ボタン右')
 #clear_btn = st.button('クリア')
 
 
-
-#ローカルok
+#df = pd.read_csv(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\data001.csv')
 #df = pd.read_csv('data001.csv')
-#ローカルok、クラウドno
 #df = pd.read_csv('./data001.csv')
-df = pd.read_csv('001_streamlit/data001.csv')
+#df = pd.read_csv('001_streamlit/data001.csv')
+
+# Localの値によって異なるパスを指定
+if Local == 1:
+    df = pd.read_csv(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\data001.csv')
+elif Local == 2:
+    df = pd.read_csv('./data001.csv')
+
 
 #平均
 mean1 = df.groupby('科目').mean(numeric_only=True)
