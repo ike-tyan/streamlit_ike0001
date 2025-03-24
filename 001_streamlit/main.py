@@ -15,9 +15,9 @@ with left1_column:
     #イメージ画像
     #ローカルOK
     #photo = Image.open('レシート_001.jpg')
-    #ローカルOK、クラウドok
-    photo = Image.open('./レシート_001.jpg')
-    #photo = Image.open('001_streamlit/レシート_001.jpg')
+    #ローカルOK、クラウドno
+    #photo = Image.open('./レシート_001.jpg')
+    photo = Image.open('001_streamlit/レシート_001.jpg')
     st.image(photo, caption='レシート類')
 
 with right1_column:
@@ -84,9 +84,9 @@ right_column.button('ボタン右')
 
 #ローカルok
 #df = pd.read_csv('data001.csv')
-#ローカルok、クラウドok
-df = pd.read_csv('./data001.csv')
-#df = pd.read_csv('001_streamlit/data001.csv')
+#ローカルok、クラウドno
+#df = pd.read_csv('./data001.csv')
+df = pd.read_csv('001_streamlit/data001.csv')
 
 #平均
 mean1 = df.groupby('科目').mean(numeric_only=True)
