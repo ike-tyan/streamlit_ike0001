@@ -27,7 +27,7 @@ with left1_column:
     if Local == 1:
         photo = Image.open(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\レシート_001.jpg')
     elif Local == 2:
-        photo = Image.open('./レシート_001.jpg')
+        photo = Image.open('レシート_001.jpg')
     
     #画像の表示
     st.image(photo, caption='レシート類')
@@ -102,7 +102,7 @@ right_column.button('ボタン右')
 if Local == 1:
     df = pd.read_csv(r'c:\Users\ikega\OneDrive\デスクトップ\001_streamlit\data001.csv')
 elif Local == 2:
-    df = pd.read_csv('./data001.csv')
+    df = pd.read_csv('data001.csv')
 
 
 #平均
