@@ -1,3 +1,6 @@
+
+# streamlit run  "C:\Users\ikega\OneDrive\デスクトップ\001_streamlit\main.py"
+
 import streamlit as st
 import pandas as pd
 
@@ -10,8 +13,11 @@ left1_column, right1_column = st.columns(2)
 with left1_column:
     #左側
     #イメージ画像
-    #photo = Image.open('./レシート_001.jpg')
-    photo = Image.open('001_streamlit/レシート_001.jpg')
+    #ローカルOK
+    #photo = Image.open('レシート_001.jpg')
+    #ローカルOK、クラウドok
+    photo = Image.open('./レシート_001.jpg')
+    #photo = Image.open('001_streamlit/レシート_001.jpg')
     st.image(photo, caption='レシート類')
 
 with right1_column:
@@ -76,10 +82,11 @@ right_column.button('ボタン右')
 
 
 
-
-
-#df = pd.read_csv('./data001.csv')
-df = pd.read_csv('001_streamlit/data001.csv')
+#ローカルok
+#df = pd.read_csv('data001.csv')
+#ローカルok、クラウドok
+df = pd.read_csv('./data001.csv')
+#df = pd.read_csv('001_streamlit/data001.csv')
 
 #平均
 mean1 = df.groupby('科目').mean(numeric_only=True)
@@ -100,3 +107,13 @@ count1 = df.groupby('科目').count()
 st.write(df)
 
 st.write(sum1)
+
+
+# 累計額を計算して新しい列として追加
+df['累計額'] = df['金額'].cumsum()
+st.write(df)
+
+#10万円以上の減価償却確認欄を新しい列として追加
+
+df['減価償却']=df['金額'].map(lambda x:'■対象■'if x>=100000 else '不要')
+st.write(df)
