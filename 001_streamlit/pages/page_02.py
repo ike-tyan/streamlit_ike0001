@@ -18,7 +18,7 @@ if Local == 1:
     yaml_path = r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit_0test\confug.yaml"
 elif Local == 2:
     ## ユーザー設定読み込み
-    yaml_path = "001_streamlit_0test/confug.yaml"
+    yaml_path = "001_streamlit_0test\confug.yaml"
 
 
 with open(yaml_path) as file:
