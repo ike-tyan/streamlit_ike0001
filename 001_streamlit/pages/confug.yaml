@@ -1,0 +1,14 @@
+cookie:
+  expiry_days: 1
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    kei:
+      email: johndoe@example.com
+      name: keiko
+      password: keikei
+    ike:
+      email: johndoe@example.com
+      name: kazu
+      password: ikeike
