@@ -1,25 +1,21 @@
 # streamlit run  "C:\Users\ikega\OneDrive\デスクトップ\001_streamlit_0test\pages\page_01.py"
 
+import os
 import streamlit as st
-from PIL import Image
-
 import streamlit_authenticator as stauth
-
 import yaml
+from PIL import Image
 from yaml.loader import SafeLoader
 
+# 相対パスの生成
+# 現在のファイルのディレクトリを取得
+current_dir1 = os.path.dirname(__file__)
 
-# 変数Localの値を選択
-    # 1＜ローカル＞または2＜クラウド＞を選べるようにする
-Local = 2
-# Localの値によって異なるパスを指定
-if Local == 1:
-    ## ユーザー設定読み込み
-    yaml_path = r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit_0test\confug.yaml"
-elif Local == 2:
-    ## ユーザー設定読み込み
-    yaml_path = "001_streamlit_0test\confug.yaml"
+# 上記のディレクトリの親ディレクトリを取得
+current_dir2 = os.path.dirname(current_dir1)
 
+# 親ディレクトリを取得から作りたいパスを作成
+yaml_path = os.path.join(current_dir2, 'config.yaml')
 
 with open(yaml_path) as file:
     config = yaml.load(file, Loader=SafeLoader)
@@ -46,16 +42,11 @@ if st.session_state["authentication_status"]:
     )
     st.title('ページ2')
 
-    # Localの値によって異なるパスを指定
-    if Local == 1:
-    ## ユーザー設定読み込み
-        poto = Image.open(r"C:\Users\ikega\OneDrive\デスクトップ\001_streamlit_0test\data\k02.jpg")
-        st.image(poto,width=50)
-    elif Local == 2:
-    ## ユーザー設定読み込み
-        poto = Image.open("001_streamlit_0test\data\k02.jpg")
-        st.image(poto,width=50)
+    # 親ディレクトリを取得から作りたいパスを作成
+    poto2 = os.path.join(current_dir2, 'data', 'k02.jpg')
 
+    # Streamlitで画像を表示
+    st.image(poto2, width=100, caption="カレントディレクトリから絶体パスを作成")
 
 elif st.session_state["authentication_status"] is False:
     ## ログイン成功ログイン失敗
